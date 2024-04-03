@@ -5,22 +5,20 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container py-5">
-    <article>
-      <ul>
-        <li>
-          Место: {{ post.location }}              
-        </li>
-        <li>
-          Дата: {{ post.date }}
-        </li>
-        <li>
-          Категория: <a href="not-my-day">{{ post.category }}</a>
-        </li>
-      </ul>         
-      <p style="width: 65%;">
-        {{ post.text }}
-      </p>          
-    </article>                
-  </div>
+  <article>
+    <ul>
+      <li>
+        Место: {{ post.location }}              
+      </li>
+      <li>
+        Дата: {{ post.date }}
+      </li>
+      <li>
+        Категория: <a href="not-my-day">{{ post.category }}</a>
+      </li>
+    </ul>         
+    <p style="width: 65%;">
+      {{ post.text }}
+    </p>          
+  </article>                
 {% endblock %}
