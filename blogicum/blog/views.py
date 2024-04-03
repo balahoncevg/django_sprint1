@@ -49,15 +49,18 @@ posts_dict = {post['id']: post for post in posts}
 
 def index(request):
     reversed_posts = reversed(posts)
-    return render(request, 'blog/index.html', {'posts': reversed_posts})
+    return render(
+        request,
+        template_name='blog/index.html',
+        context={'posts': reversed_posts}
+    )
 
 
 def post_detail(request, post_id):
-    if post_id in posts_dict.keys():
+    if post_id in posts_dict:
         return render(
             request, 'blog/detail.html', {'post': posts_dict[post_id]})
-    else:
-        raise Http404
+    raise Http404
 
 
 def category_posts(request, category_slug):
